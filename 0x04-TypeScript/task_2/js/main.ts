@@ -195,13 +195,11 @@ console.log(createEmployee(200));   // Teacher
 console.log(createEmployee(1000));  // Director
 console.log(createEmployee('$500')); // Director
 
-export function isDirector(){
-  
-}
+
 // Type predicate to check if employee is a Director
-// export function isDirector(employee: TeacherInterface | DirectorInterface): employee is DirectorInterface {
-//   return (employee as DirectorInterface).workDirectorTasks !== undefined;
-// }
+export function isDirector(employee: TeacherInterface | DirectorInterface): employee is DirectorInterface {
+  return (employee as DirectorInterface).workDirectorTasks !== undefined;
+}
 
 
 // Function to execute work based on employee type
@@ -217,18 +215,18 @@ export function executeWork(employee: Director | Teacher): string {
 console.log(executeWork(createEmployee(200)));   // Getting to work
 console.log(executeWork(createEmployee(1000)));  // Getting to director tasks
 
-// String literal type
-type Subjects = 'Math' | 'History';
 
-// Function to teach class based on subject
-function teachClass(todayClass: Subjects): string {
-  if (todayClass === 'Math') {
-    return 'Teaching Math';
+// String literal type
+type Subjects = "Math" | "History";
+
+// Function using it
+export function teachClass(todayClass: Subjects): string {
+  if (todayClass === "Math") {
+    return "Teaching Math";
   } else {
-    return 'Teaching History';
+    return "Teaching History";
   }
 }
-
 // Example usage
 console.log(teachClass('Math'));     // Teaching Math
 console.log(teachClass('History'));  // Teaching History
