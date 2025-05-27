@@ -195,11 +195,13 @@ console.log(createEmployee(200));   // Teacher
 console.log(createEmployee(1000));  // Director
 console.log(createEmployee('$500')); // Director
 
-
-// Type predicate to check if employee is a Director
-export function isDirector(employee: TeacherInterface | DirectorInterface): employee is DirectorInterface {
-  return (employee as DirectorInterface).workDirectorTasks !== undefined;
+export function isDirector(){
+  
 }
+// Type predicate to check if employee is a Director
+// export function isDirector(employee: TeacherInterface | DirectorInterface): employee is DirectorInterface {
+//   return (employee as DirectorInterface).workDirectorTasks !== undefined;
+// }
 
 
 // Function to execute work based on employee type
