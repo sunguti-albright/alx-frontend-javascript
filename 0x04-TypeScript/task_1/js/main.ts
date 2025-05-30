@@ -106,21 +106,23 @@ function printTeacher({ firstName, lastName }: { firstName: string; lastName: st
 
 }
 
-
-// Interface describing the StudentClass
 interface StudentClassInterface {
   workOnHomework(): string;
   displayName(): string;
 }
 
-// Interface describing the constructor signature
 interface StudentClassConstructor {
   new (firstName: string, lastName: string): StudentClassInterface;
 }
 
-// Implementation of the class
 class StudentClass implements StudentClassInterface {
-  constructor(private firstName: string, private lastName: string) {}
+  private firstName: string;
+  private lastName: string;
+
+  constructor(firstName: string, lastName: string) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
 
   workOnHomework(): string {
     return "Currently working";
