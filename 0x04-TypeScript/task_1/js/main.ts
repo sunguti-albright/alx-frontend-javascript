@@ -115,7 +115,7 @@ interface StudentClassConstructor {
   new (firstName: string, lastName: string): StudentClassInterface;
 }
 
-class StudentClass implements StudentClassInterface {
+class StudentClass {
   private firstName: string;
   private lastName: string;
 
