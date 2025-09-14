@@ -57,3 +57,25 @@ window.addEventListener("DOMContentLoaded", () => {
   table.appendChild(tbody);
   document.body.appendChild(table);
 });
+
+
+// Define the Teacher interface
+interface Teacher {
+  readonly firstName: string;         // readonly so only set on initialization
+  readonly lastName: string;          // readonly so only set on initialization
+  fullTimeEmployee: boolean;          // always defined
+  yearsOfExperience?: number;         // optional
+  location: string;                   // always defined
+  [key: string]: any;                 // allow any other property (like contract)
+}
+
+// Create an example teacher object
+const teacher3: Teacher = {
+  firstName: 'John',
+  lastName: 'Doe',
+  fullTimeEmployee: false,
+  location: 'London',
+  contract: false,   // extra property not defined in the interface
+};
+
+console.log(teacher3);
