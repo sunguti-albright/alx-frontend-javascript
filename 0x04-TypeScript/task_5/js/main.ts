@@ -1,6 +1,7 @@
 interface MajorCredits {
   credits: number;
   // brand to make it nominal
+  //
   _majorBrand: 'major';
 }
 
